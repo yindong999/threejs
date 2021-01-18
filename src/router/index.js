@@ -51,6 +51,24 @@ const routes = [
         component: () => import("@/views/screenMove"),
         meta: { title: 'screenMove'}
       } ,
+      {
+        name:'threeSpace1', 
+        path:'threeSpace1', 
+        component: () => import("@/views/threeSpace1"),
+        meta: { title: 'threeSpace1'}
+      } ,
+      {
+        name:'threeSpace2', 
+        path:'threeSpace2', 
+        component: () => import("@/views/threeSpace2"),
+        meta: { title: 'threeSpace2'}
+      } ,
+      {
+        name:'ambientLight', 
+        path:'ambientLight', 
+        component: () => import("@/views/light"),
+        meta: { title: 'ambientLight'}
+      } ,
     ],
     // 路由独享守卫
     beforeEnter: (to, from, next) => {

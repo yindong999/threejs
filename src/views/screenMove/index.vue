@@ -90,9 +90,12 @@ export default {
       var material = new this.$THREE.MeshLambertMaterial({ color: 0xffffff });
       // 新建网格模型对象
       this.mesh = new this.$THREE.Mesh(geometry, material);
-      this.mesh.position.x = 0;
-      this.mesh.position.y = 0;
-      this.mesh.position.z = 0;
+      // Vector3( x, y, z ) 三维向量。
+      this.mesh.position = new this.$THREE.Vector3(0,0,0);
+      // this.mesh.position.x = 0;
+      // this.mesh.position.y = 0;
+      // this.mesh.position.z = 0;
+
       this.mesh.rotation.y = 30;
       this.mesh.rotation.x = 90;
       this.scene.add(this.mesh);
@@ -107,8 +110,8 @@ export default {
     },
     animation() {
       this.mesh.rotation.x -= 0.01; 
-  
       this.renderer.render(this.scene, this.camera);
+      // 定时器函数
       requestAnimationFrame(this.animation);
     },
   },
